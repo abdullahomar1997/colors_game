@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Pixel";
+  src: url("font/Bungee-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: 'Creepster';
+  src: url('font/Creepster-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shrikhand';
+  src: url('font/Shrikhand-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'text2';
+  src: url('font/Patua_One/Sniglet-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'text3';
+  src: url('font/ADLaM_Display/Belanosima-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'text4';
+  src: url('font/VarelaRound-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'text7';
+  src: url('font/VarelaRound-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'text9';
+  src: url('font/Kanit/Kanit-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'text8';
+  src: url('font/Kanit/Kanit-ExtraLight.ttf') format('truetype');
+}
+
+/* Bungee-Regular.ttf */
+/* LilitaOne-Regular.ttf */
+/* Schoolbell-Regular.ttf - h */
+/* Skranji-Bold.ttf */
+/* Skranji-Regular.ttf */
+/* TradeWinds-Regular.ttf - b */
+/* WendyOne-Regular.ttf b */
+/* Schoolbell-Regular.ttf - 3 */
+/* font/Schoolbell-Regular.ttf - 4 */
+/* Skranji-Bold.ttf - 4 */
