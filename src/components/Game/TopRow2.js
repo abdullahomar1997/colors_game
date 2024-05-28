@@ -39,7 +39,7 @@ const TopRow2 = ({ topRowColors, onSelect }) => {
           transition={spring}
           style={{ backgroundColor: color }}
           onClick={() => onSelect(index)}
-          side={Math.floor(boardSize.width /12)}
+          side={Math.floor(boardSize.width /7)}
         />
       ))}
     </Container>
@@ -62,7 +62,7 @@ const Container = styled.div`
 const Circle = styled(motion.li)`
   width: ${props => props.side}px;
   height: ${props => props.side}px;
-  border-radius: 50%;
+  border-radius: 30%;
   margin: 5px;
   cursor: pointer;
   list-style: none;

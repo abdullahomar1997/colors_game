@@ -15,11 +15,12 @@ const GameOverPopUp = ({isSettingsOpen,setIsSettingsOpen,status,playAgain}) => {
   return (
     <>
       {isSettingsOpen && (
-        <ModalOverlay onClick={closeSettings}>
+        <ModalOverlay>
           <Container>
             <GameOver>Game Over</GameOver>
             <GameOverMessage>
               {status === "YouWon" && 'Congratulations! You\'ve Won!'}
+              {status === "YouLost" && 'You selected the wrong option. Keep going, you can do it!'}
               {status === "EvalLimit"  && 'Ouch, no more valid moves.'}
               {status === "TimeUp" && 'You ran out of time'}
             </GameOverMessage>

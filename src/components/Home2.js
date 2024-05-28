@@ -35,7 +35,7 @@ const Home2 = () => {
       <ShareIcon  onClick={handleShare} />
       <SettingsIcon  onClick={() => openSettings()}/>
       <TopRow2 topRowColors={topRowColors} onSelect={() => console.log("nothing")} />
-      <GameName>DROP COLOR</GameName>
+      <GameName>COLOR MATCH</GameName>
       <ButtonContainer>
         <Button to="/play-offline" backgroundColor="#FF7F50">Single Player </Button>
         <Button  to="/play-with-friends" backgroundColor="#FF5C4D" >Multiplayer with Friends</Button>

@@ -20,16 +20,16 @@ const useCalculator = (topRowColors, bottomRowColors, setEvaluation, setStatus, 
       setNumber(matchingCount);
       setEvaluation((prev) => prev - 1);
 
-      if (matchingCount === topRowColors.length) {
-        level  && handleAddString(level.id);
-        setStatus("YouWon");
-        setIsSettingsOpen(true);
-      }
+      // if (matchingCount === topRowColors.length) {
+      //   level  && handleAddString(level.id);
+      //   setStatus("YouWon");
+      //   setIsSettingsOpen(true);
+      // }
 
-      if (evaluation === 0) {
-        setStatus("EvalLimit");
-        setIsSettingsOpen(true);
-      }
+      // if (evaluation === 0) {
+      //   setStatus("EvalLimit");
+      //   setIsSettingsOpen(true);
+      // }
     };
     const onlineCalculate = () => {
       const matchingCount = countMatchingColors(topRowColors, bottomRowColors);

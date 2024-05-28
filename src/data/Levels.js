@@ -1,4 +1,4 @@
-import { colorsList } from "../utils/Colors";
+import { colorsMatch } from "../utils/Colors";
 
 const unlimited = 100;
 const easyTime = 60;
@@ -7,14 +7,14 @@ const generateLevel = (id, evaluationLimit, timeLimit, colorSliceLength) => ({
   id,
   evaluationLimit,
   timeLimit,
-  colors: colorsList.slice(0, colorSliceLength)
+  colors: colorsMatch.slice(0, colorSliceLength)
 });
 
 const levels = [
   // Levels with a time limit of 60 seconds
   generateLevel(303, unlimited , easyTime, 2),
   generateLevel(304, unlimited , easyTime, 3),
-  generateLevel(305, unlimited , easyTime, 4),
+  generateLevel(305, unlimited , easyTime, 5),
   generateLevel(306, unlimited , easyTime, 5),
   generateLevel(307, unlimited , easyTime, 6),
 

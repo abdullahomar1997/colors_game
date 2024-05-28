@@ -170,3 +170,18 @@ export const HexColors = [
     "#7D7D7D",  
     "#808069"   
 ]
+
+export const colorsMatch = [
+  { name: 'Red', hex: '#c90016 ' },
+  { name: 'Green', hex: '#008000 ' },
+  { name: 'Blue', hex: '#002387 ' },
+  { name: 'Yellow', hex: '#eed202 ' },
+  { name: 'Black', hex: '#000000' },
+  // { name: 'Lime', hex: '#39ff14 ' },
+  { name: 'Maroon', hex: '#800000 ' },
+  { name: 'White', hex: '#FFFFFF' },
+  { name: 'Pink', hex: '#e0218a ' },
+  { name: 'Gray', hex: '#696969 ' },
+  { name: 'Purple', hex: '#6f2da8  ' },
+  { name: 'Orange', hex: '#fe5a1d ' },
+];
