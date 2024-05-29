@@ -38,7 +38,8 @@ const TopRow = ({ topRowColors, onSelect,bottomRowColors }) => {
           // layout
           // transition={spring}
           // style={{ backgroundColor: color }}
-          style={{ backgroundColor:"#E5E4E2" }}
+          // style={{ backgroundColor:"#E5E4E2" }}
+          style={{ backgroundColor:"#FFFFFF " }}
           onClick={() => onSelect(index)}
           side={Math.floor(boardSize.width /5)}
         >

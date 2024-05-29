@@ -35,6 +35,7 @@ export const AppContainer = styled.div`
    margin: 0;
     background-color: #121926;
     background: linear-gradient(to bottom, #1a1a2e, #2d2d44, #4a4e69);
+    background: linear-gradient(to bottom, #151e23, #2d2d44, #4a4e69);
     position: absolute;
 
 `;

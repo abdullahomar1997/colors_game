@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { shuffleArray } from './GameServices';
 
-const useRows = (colors,setStatus,setIsSettingsOpen) => {
+const useRows = (colors,setStatus,setIsSettingsOpen,seconds) => {
 
     const [topRowColors, setTopRowColors] = useState(shuffleArray(colors));
     const [bottomRowColors,setBottomRowColors] = useState(shuffleArray(colors));
@@ -25,6 +25,11 @@ const useRows = (colors,setStatus,setIsSettingsOpen) => {
     const SwapRows = (index) => {
       if(topRowColors[index].name === color2.name){
         // alert("CORRRREEEEEEEEEEEEEECCCCCTTTT")
+        if(number3 === seconds){
+          setStatus("YouWon");
+          setIsSettingsOpen(true);
+        }
+        
         setNumber3((prev) => prev +=1)
       }
       else{
@@ -35,6 +40,10 @@ const useRows = (colors,setStatus,setIsSettingsOpen) => {
         // alert("WROOOOOOONNNNNNNGGGGG")
         // setNumber3((prev) => prev -=1)
         setStatus("YouLost");
+        setIsSettingsOpen(true);
+      }
+      if(number3 === seconds){
+        setStatus("YouWon");
         setIsSettingsOpen(true);
       }
       resetRows();
