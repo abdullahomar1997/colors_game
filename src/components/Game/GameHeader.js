@@ -32,7 +32,7 @@ const CircularProgressBar = ({ seconds,percentage }) => {
 };
 
 
-const GameHeader = ({seconds}) => {
+const GameHeader = ({seconds,lives=100}) => {
   
   const [isPausePopupOpen, setIsPausePopupOpen] = useState(false);
 
@@ -50,7 +50,7 @@ const GameHeader = ({seconds}) => {
       <Block111>
         {/* <Title>LEVEL</Title> */}
         <FaHeart size={30} color={"#de5b49"}/>
-        <TitleValue>1</TitleValue>
+        <TitleValue>{lives}</TitleValue>
       </Block111>
       <Block>
         {/* <Title>SECONDS</Title> */}

@@ -7,7 +7,7 @@ import Game from './Game/Game';
 let level2 =  null;
 
 const GameLevelsScreen = () => {
-  const existingArrayString = localStorage.getItem('levelwon');
+  const existingArrayString = localStorage.getItem('levelwon-colormatch');
   const existingArray = existingArrayString ? JSON.parse(existingArrayString) : [];
 
   const [selectedLevel, setSelectedLevel] = useState(null);

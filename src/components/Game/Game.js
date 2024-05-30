@@ -18,14 +18,14 @@ let temp = false;
 const Game = ({level=levels[2],id=null}) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [status, setStatus] = useState(null);
-  const [seconds,setSeconds] = useTimer(level.timeLimit, status, 
+  const [seconds,setSeconds] = useTimer(level.seconds, status, 
     () => {
     setStatus('TimeUp');
     setIsSettingsOpen(true);
   },
 
 );
-  const {topRowColors, bottomRowColors,SwapRows,setTopRowColors,setBottomRowColors,resetRows,color1,number3}  = useRows(level.colors,setStatus,setIsSettingsOpen,level.timeLimit);
+  const {topRowColors, bottomRowColors,SwapRows,setTopRowColors,setBottomRowColors,resetRows,color1,number3,pLives}  = useRows(level.colors,setStatus,setIsSettingsOpen,level.seconds,level.target,level.lives,level.id);
   const [evaluation, setEvaluation] = useState(level.evaluationLimit);
   const {gameId, number1,number2,triggerOnlineRecalculation} = useOnlineGame(id,temp,topRowColors,setTopRowColors,bottomRowColors,setBottomRowColors,setStatus,setIsSettingsOpen,evaluation,setEvaluation);
   const {number,triggerRecalculation,resetCorrect} = useCalculator(topRowColors,bottomRowColors,setEvaluation,setStatus,setIsSettingsOpen,evaluation,level);
@@ -35,7 +35,7 @@ const Game = ({level=levels[2],id=null}) => {
     setStatus(null);
     setIsSettingsOpen(false);
     setEvaluation(level.evaluationLimit);
-    setSeconds(level.timeLimit);
+    setSeconds(level.seconds);
   };
 
 
@@ -45,8 +45,8 @@ const Game = ({level=levels[2],id=null}) => {
       {id && <BottomLeftText>
         Game ID is : {gameId}
       </BottomLeftText>}
-      <GameHeader seconds={seconds}/>
-      {!id ? <CircleWithNumber number={number3} /> : <CircleWithNumber number={number3} number2={number3} />}
+      <GameHeader seconds={seconds} lives={pLives} />
+      {!id ? <CircleWithNumber number={number3} target={level.target} /> : <CircleWithNumber number={number3} number2={number3} />}
       <CorrectColor color1={color1} />
      
       <Grid top={topRowColors} bottomRowColors={bottomRowColors} handleCircleClick={SwapRows} bottom={bottomRowColors} status={status} />

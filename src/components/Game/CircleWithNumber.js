@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CircleWithNumber = ({ number=0,number2=1000  }) => {
+const CircleWithNumber = ({ number=0,number2=1000 ,target=100 }) => {
   return (
     <>
     {
       number2 === 1000 ? (
         <Container>
         <CircleContainer>
-          <Title>Correct</Title>
           <Number> {number}</Number>
+          <Title>Target: {target} </Title>
         </CircleContainer>
       </Container>
       ):(
@@ -49,7 +49,7 @@ const Container2 = styled.div`
 `;
 
 const CircleContainer = styled.div`
-  width: 100px;
+  width: 150px;
   height: 100px;
   font-size: 2.5rem;
   background-color: transparent;

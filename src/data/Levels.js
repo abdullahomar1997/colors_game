@@ -1,59 +1,72 @@
 import { colorsMatch } from "../utils/Colors";
 
+// level 1 - 10 seconds , 5 target , 3 lives, 2 options
+// level 2 - 10 seconds , 5 target , 1 lives, 2 options
+// level 3 - 10 seconds , 10 target , 3 lives, 2 options
+// level 4 - 10 seconds , 10 target , 1 lives, 2 options
+// level 5 - 10 seconds , 15 target , 3 lives, 2 options
+// level 5 - 10 seconds , 15 target , 1 lives, 2 options
+
+const seconds10 = 10;
+const seconds30 = 30;
+const seconds60 = 60;
+const seconds100 = 100;
+
+const targetLow = 1;
+const targetMid = 2;
+const targetHigh = 3;
+
+const lives1 = 3;
+const lives3 = 3;
+
+const options2 = 2;
+const options3 = 3;
+
 const unlimited = 100;
 const easyTime = 60;
 
-const generateLevel = (id, evaluationLimit, timeLimit, colorSliceLength) => ({
+const generateLevel = (id, seconds,target,lives,options) => ({
   id,
-  evaluationLimit,
-  timeLimit,
-  colors: colorsMatch.slice(0, colorSliceLength)
+  seconds,
+  target,
+  lives,
+  options,
+  colors: colorsMatch.slice(0, 7)
 });
 
 const levels = [
-  // Levels with a time limit of 60 seconds
-  generateLevel(303, unlimited , easyTime, 2),
-  generateLevel(304, unlimited , easyTime, 3),
-  generateLevel(305, unlimited , easyTime, 5),
-  generateLevel(306, unlimited , easyTime, 5),
-  generateLevel(307, unlimited , easyTime, 6),
+  // Levels with a time limit of 10 seconds
+  generateLevel(1001,seconds10,5,lives1,options2),
+  generateLevel(1002,seconds10,5,lives3,options2),
+  generateLevel(1003,seconds10,10,lives1,options2),
+  generateLevel(1004,seconds10,10,lives3,options2),
+  generateLevel(1005,seconds10,15,lives1,options2),
+  generateLevel(1006,seconds10,15,lives3,options2),
 
   // Levels with a time limit of 30 seconds
-  generateLevel(903, unlimited , 30, 2),
-  generateLevel(904, unlimited , 30, 3),
-  generateLevel(905, unlimited , 30, 4),
-  generateLevel(906, unlimited , 30, 5),
-  generateLevel(907, unlimited , 30, 6),
-
-  // Levels with a time limit of 15 seconds
-  generateLevel(403, unlimited , 15, 2),
-  generateLevel(404, unlimited , 15, 3),
-  generateLevel(405, unlimited , 15, 4),
-  generateLevel(406, unlimited , 15, 5),
-  generateLevel(407, unlimited , 15, 6),
+  generateLevel(2001,seconds30,15,lives1,options2),
+  generateLevel(2002,seconds30,15,lives3,options2),
+  generateLevel(2003,seconds30,30,lives1,options2),
+  generateLevel(2004,seconds30,30,lives3,options2),
+  generateLevel(2005,seconds30,45,lives1,options2),
+  generateLevel(2006,seconds30,45,lives3,options2),
 
   // Levels with a time limit of 60 seconds
-  generateLevel(203, 6, 60, 2),
-  generateLevel(204, 8, 60, 3),
-  generateLevel(205, 10, 60, 4),
-  generateLevel(206, 12, 60, 5),
-  generateLevel(207, 14, 60, 6),
+  generateLevel(3001,seconds60,30,lives1,options2),
+  generateLevel(3002,seconds60,30,lives3,options2),
+  generateLevel(3003,seconds60,60,lives1,options2),
+  generateLevel(3004,seconds60,60,lives3,options2),
+  generateLevel(3005,seconds60,90,lives1,options2),
+  generateLevel(3006,seconds60,90,lives3,options2),
 
-  // Levels with a time limit of 30 seconds
-  generateLevel(103, 5, 60, 2),
-  generateLevel(104, 6, 60, 3),
-  generateLevel(105, 8, 60, 4),
-  generateLevel(106, 9, 60, 5),
-  generateLevel(107, 11, 60, 6),
-
-  // Levels with a time limit of 60 seconds
-  generateLevel(503, 3, 60, 2),
-  generateLevel(504, 4, 60, 3),
-  generateLevel(505, 5, 60, 4),
-  generateLevel(506, 6, 60, 5),
-  generateLevel(507, 7, 60, 6),
-
-  // Add more levels as needed...
+  // Levels with a time limit of 100 seconds
+  generateLevel(4001,seconds100,50,lives1,options2),
+  generateLevel(4002,seconds100,50,lives3,options2),
+  generateLevel(4003,seconds100,100,lives1,options2),
+  generateLevel(4004,seconds100,100,lives3,options2),
+  generateLevel(4005,seconds100,150,lives1,options2),
+  generateLevel(4006,seconds100,150,lives3,options2),
+ 
 ];
 
 export default levels;

@@ -6,14 +6,22 @@ const LevelPopUp = ({unlocked,selectedLevel, closePopup,setIsPlay }) => (
   <ModalOverlay onClick={closePopup}>
     <Container>
       <Heading>Level {selectedLevel.id}</Heading>
-      <TopRow2 topRowColors={selectedLevel.colors} onSelect={() => console.log("nothing")} />
+      {/* <TopRow2 topRowColors={selectedLevel.colors} onSelect={() => console.log("nothing")} /> */}
       <DetailsContainer>
-        <DetailsTitle>Challenge Limit:</DetailsTitle>
-        <DetailsValue>{selectedLevel.evaluationLimit}</DetailsValue>
+        <DetailsTitle>Time Allocated:</DetailsTitle>
+        <DetailsValue>{selectedLevel.seconds} seconds</DetailsValue>
       </DetailsContainer>
       <DetailsContainer>
-        <DetailsTitle>Time Allotted:</DetailsTitle>
-        <DetailsValue>{selectedLevel.timeLimit} seconds</DetailsValue>
+        <DetailsTitle>Target:</DetailsTitle>
+        <DetailsValue>{selectedLevel.target}</DetailsValue>
+      </DetailsContainer>
+      <DetailsContainer>
+        <DetailsTitle>Lives:</DetailsTitle>
+        <DetailsValue>{selectedLevel.lives}</DetailsValue>
+      </DetailsContainer>
+      <DetailsContainer>
+        <DetailsTitle>Options:</DetailsTitle>
+        <DetailsValue>{selectedLevel.options}</DetailsValue>
       </DetailsContainer>
       <ButtonsContainer>
         <PlayButtonContainer>

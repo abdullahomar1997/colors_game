@@ -76,11 +76,11 @@ export const updateGameStatus = (gameId) => {
 };
 
 export const handleAddString = (levelId) => {
-  const existingArrayString = localStorage.getItem('levelwon');
+  const existingArrayString = localStorage.getItem('levelwon-colormatch');
   const existingArray = existingArrayString ? JSON.parse(existingArrayString) : [];
 
   const updatedArray = [...existingArray, levelId];
-  localStorage.setItem('levelwon', JSON.stringify(updatedArray));
+  localStorage.setItem('levelwon-colormatch', JSON.stringify(updatedArray));
 };
 
 // const existingArrayString = localStorage.getItem('levelwon');
