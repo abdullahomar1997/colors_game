@@ -179,7 +179,7 @@ export const colorsMatch = [
   { name: 'Black', hex: '#000000' },
   // { name: 'Lime', hex: '#39ff14 ' },
   { name: 'Maroon', hex: '#800000 ' },
-  { name: 'White', hex: '#FFFFFF' },
+  // { name: 'White', hex: '#FFFFFF' },
   { name: 'Pink', hex: '#e0218a ' },
   { name: 'Gray', hex: '#696969 ' },
   { name: 'Purple', hex: '#6f2da8  ' },

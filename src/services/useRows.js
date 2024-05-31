@@ -35,6 +35,9 @@ const useRows = (colors,setStatus,setIsSettingsOpen,seconds,target,lives,id) => 
         setNumber3((prev) => prev +=1)
       }
       else{
+        if (navigator.vibrate) {
+          navigator.vibrate(100); // Vibrate for 500ms
+        }
         if(pLives === 1){
           setStatus("YouLost");
           setIsSettingsOpen(true);        }

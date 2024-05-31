@@ -1,28 +1,51 @@
 import React from 'react';
 import styled from 'styled-components';
 import TopRow2 from '../Game/TopRow2';
+import { BsFillStopwatchFill } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa";
+import { FaHandPointer } from "react-icons/fa";
+import { ImTarget } from "react-icons/im";
 
 const LevelPopUp = ({unlocked,selectedLevel, closePopup,setIsPlay }) => (
   <ModalOverlay onClick={closePopup}>
     <Container>
       <Heading>Level {selectedLevel.id}</Heading>
+      <Container5>
+        <Container6>
+        <ImTarget size={25} color={"#0BC507"} />
+        <DetailsValue>{selectedLevel.target}</DetailsValue>
+        </Container6>
+        <Container6>
+          <BsFillStopwatchFill size={25} color={"#ffffff"} />
+          <DetailsValue>{selectedLevel.seconds}s</DetailsValue>
+        </Container6>
+        <Container6>
+        <FaHeart size={23} color={"#de5b49"}/>
+        <DetailsValue>{selectedLevel.lives}</DetailsValue>
+        </Container6>
+        <Container6>
+          <FaHandPointer size={23} color={"#ffffff"} />
+          <DetailsValue>{selectedLevel.options}</DetailsValue>
+        </Container6>
+
+      </Container5>
       {/* <TopRow2 topRowColors={selectedLevel.colors} onSelect={() => console.log("nothing")} /> */}
-      <DetailsContainer>
-        <DetailsTitle>Time Allocated:</DetailsTitle>
-        <DetailsValue>{selectedLevel.seconds} seconds</DetailsValue>
+      {/* <DetailsContainer>
+        <BsFillStopwatchFill color={"#ffffff"} />
+        <DetailsValue>{selectedLevel.seconds}s</DetailsValue>
       </DetailsContainer>
       <DetailsContainer>
-        <DetailsTitle>Target:</DetailsTitle>
+      <ImTarget size={20} color={"#de5b49"} />
         <DetailsValue>{selectedLevel.target}</DetailsValue>
       </DetailsContainer>
       <DetailsContainer>
-        <DetailsTitle>Lives:</DetailsTitle>
+      <FaHeart size={20} color={"#de5b49"}/>
         <DetailsValue>{selectedLevel.lives}</DetailsValue>
       </DetailsContainer>
       <DetailsContainer>
-        <DetailsTitle>Options:</DetailsTitle>
+      <FaHandPointer color={"#de5b49"} />
         <DetailsValue>{selectedLevel.options}</DetailsValue>
-      </DetailsContainer>
+      </DetailsContainer> */}
       <ButtonsContainer>
         <PlayButtonContainer>
           {
@@ -84,6 +107,33 @@ const DetailsContainer = styled.div`
   margin: 10px 0px;
   width: 80%;
   font-family: text4;
+  background-color: green;
+
+`;
+const Container5 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+  margin: 10px 0px;
+  width: 90%;
+  font-family: text4;
+  /* background-color: green; */
+
+`;
+const Container6 = styled.div`
+  display: flex;
+  /* flex:1; */
+  height: 40px;
+  width: 20%;
+  justify-content: space-around;
+  align-items: center;
+  /* padding-top: 5px; */
+  margin: 10px 0px;
+  /* width: 80%; */
+  font-family: text4;
+  border-radius: 10px;
+  /* background-color: green; */
+
 `;
 
 const DetailsTitle = styled.span`
@@ -93,6 +143,7 @@ const DetailsTitle = styled.span`
 
 const DetailsValue = styled.span`
   color: white;
+  padding-top: 3px;
 `;
 
 const ButtonsContainer = styled.div`

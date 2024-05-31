@@ -82,6 +82,7 @@ const Circle = styled(motion.li)`
 const CircleText = styled.p`
   font-size: 1.2rem;
   /* font-weight: bold; */
-  font-family: text9;
+  font-family: text7;
+  font-weight: bold;
   color: ${props => props.textColor};
 `;
