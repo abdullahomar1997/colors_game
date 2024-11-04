@@ -1,12 +1,11 @@
 import React from 'react';
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Auth from './components/Auth';
-import GameLevelsScreen from './components/GameLevelsScreen';
-import Home2 from './components/Home2';
 import Game from './components/Game/Game';
+import Home2 from './components/Home2';
 
-let level2 =  null;
+let level2 = null;
 
 const App = () => {
   return (
@@ -14,7 +13,7 @@ const App = () => {
       <HomeContainer>
         <Routes>
           <Route path="/" element={<Home2 />} />
-          <Route path="/play-offline" element={<GameLevelsScreen />} />
+          <Route path="/play-offline" element={<Game />} />
           <Route path="/play-with-friends" element={<Auth />} />
         </Routes>
       </HomeContainer>

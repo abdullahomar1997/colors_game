@@ -1,5 +1,5 @@
+import {motion} from 'framer-motion';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 export const CircleContainer = styled.div`
   max-width: 100vw;
@@ -16,7 +16,7 @@ export const Circle = styled(motion.div)`
     cursor: pointer;
 `;
 
-export  const Header = styled.div`
+export const Header = styled.div`
     display: flex;
     height: 8vh;
     align-items: center;
@@ -37,7 +37,10 @@ export const AppContainer = styled.div`
     background: linear-gradient(to bottom, #1a1a2e, #2d2d44, #4a4e69);
     background: linear-gradient(to bottom, #151e23, #2d2d44, #4a4e69);
     position: absolute;
-
+background-color: #000000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect fill='none' stroke-width='100' id='a' x='-400' y='-300' width='800' height='600'/%3E%3C/defs%3E%3Cg transform='rotate(0 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(0 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(0 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%23000' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000011' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000022' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000033' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000044' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000055' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000066' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000077' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000088' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%23000099' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%230000aa' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%230000bb' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%230000cc' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%230000dd' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%230000ee' href='%23a' transform='rotate(0 0 0)'/%3E%3Cuse stroke='%2300F' href='%23a' transform='rotate(0 0 0)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
 `;
 
 export const Container1 = styled.div`
