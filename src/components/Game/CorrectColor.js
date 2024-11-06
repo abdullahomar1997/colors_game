@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
-import {darken, lighten} from 'polished';
+
 
 
 const CorrectColor = ({color1}) => {
@@ -31,6 +31,7 @@ const CorrectColor = ({color1}) => {
                 <Circle
                     style={{backgroundColor: color1}}
                     side={Math.floor(boardSize.width / 5)}
+                    color3={color1}
                 />
             </Container>
         </Container1>
@@ -39,18 +40,20 @@ const CorrectColor = ({color1}) => {
 
 export default CorrectColor
 
-
+// border: 1px solid ${
+//     props => props.color3 && typeof props.color3 === 'string'
+//         ? darken(0.1, props.color3)
+//         : '#023d59'
+// };
 const Circle = styled.div`
     /* width: 65px;
     height: 65px; */
       width: ${props => props.side}px;
       height: ${props => props.side}px;
-      border: 1px solid darken(white, 10%);
     border-radius: 30%;
     /* margin: 5px; */
     cursor: pointer;
-    list-style: none;
-     background-color:  ${lighten(0.2, '#023d59')};
+    list-style: none;   
 `;
 
 const Container1 = styled.div`
