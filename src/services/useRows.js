@@ -1,13 +1,14 @@
 import {useState} from 'react';
 import {handleAddString, handleMaxLevel, shuffleArray} from './GameServices';
 
-const useRows = (colors, setStatus, setIsSettingsOpen, seconds, target, lives, id, nextLevel) => {
+const useRows = (colors, setStatus, setIsSettingsOpen, seconds, target, lives, id, nextLevel, setIsExplosion) => {
 
   const [topRowColors, setTopRowColors] = useState(shuffleArray(colors));
   const [bottomRowColors, setBottomRowColors] = useState(shuffleArray(colors));
   const [selectedIndices, setSelectedIndices] = useState([-1, -1]);
   const [number3, setNumber3] = useState(0);
-  const [pLives, setPLives] = useState(lives);
+  // const [pLives, setPLives] = useState(lives);
+  const [pLives, setPLives] = useState(1);
 
   // const randomIndex = Math.floor(Math.random() * topRowColors.length);
   const randomColorHex = topRowColors[getRandomNumber(2)];
@@ -41,7 +42,15 @@ const useRows = (colors, setStatus, setIsSettingsOpen, seconds, target, lives, i
       }
       if (pLives === 1) {
         setStatus("YouLost");
-        setIsSettingsOpen(true);
+        setIsExplosion(true);
+
+        if (navigator.vibrate) {
+          navigator.vibrate(800); // Vibrate for 500 milliseconds
+        }
+
+        setTimeout(() => {
+          setIsSettingsOpen(true);
+        }, 800); // 5000 milliseconds = 5 seconds
       }
       else {
         setPLives((prev) => prev -= 1)

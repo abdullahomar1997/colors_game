@@ -9,6 +9,7 @@ import GameOverPopUp from '../Popups/GameOverPopUp';
 import {AppContainer, BottomLeftText} from '../Styles';
 import CircleWithNumber from './CircleWithNumber';
 import CorrectColor from './CorrectColor';
+import BombExplosion from './Explosion';
 import GameHeader from './GameHeader';
 import Grid from './Grid';
 
@@ -16,6 +17,7 @@ let temp = false;
 
 const Game = ({level = levels[getMaxLevel()], id = null}) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isExplosion, setIsExplosion] = useState(false);
   const [status, setStatus] = useState(null);
   const [seconds, setSeconds] = useTimer(level.seconds, status,
     () => {
@@ -24,7 +26,7 @@ const Game = ({level = levels[getMaxLevel()], id = null}) => {
     },
 
   );
-  const {topRowColors, bottomRowColors, SwapRows, setTopRowColors, setBottomRowColors, resetRows, color1, number3, pLives} = useRows(level.colors, setStatus, setIsSettingsOpen, level.seconds, level.target, level.lives, level.id, level.nextLevel);
+  const {topRowColors, bottomRowColors, SwapRows, setTopRowColors, setBottomRowColors, resetRows, color1, number3, pLives} = useRows(level.colors, setStatus, setIsSettingsOpen, level.seconds, level.target, level.lives, level.id, level.nextLevel, setIsExplosion);
   const [evaluation, setEvaluation] = useState(level.evaluationLimit);
   const {gameId, number1, number2, triggerOnlineRecalculation} = useOnlineGame(id, temp, topRowColors, setTopRowColors, bottomRowColors, setBottomRowColors, setStatus, setIsSettingsOpen, evaluation, setEvaluation);
   const {number, triggerRecalculation, resetCorrect} = useCalculator(topRowColors, bottomRowColors, setEvaluation, setStatus, setIsSettingsOpen, evaluation, level);
@@ -47,7 +49,9 @@ const Game = ({level = levels[getMaxLevel()], id = null}) => {
       <GameHeader seconds={seconds} lives={pLives} />
       {!id ? <CircleWithNumber number={number3} target={level.target} /> : <CircleWithNumber number={number3} number2={number3} />}
       <CorrectColor color1={color1} />
-
+      {
+        isExplosion && <BombExplosion />
+      }
       <Grid top={topRowColors} bottomRowColors={bottomRowColors} handleCircleClick={SwapRows} bottom={bottomRowColors} status={status} />
       {/* <RandomizeButton text={"Evaluate " + evaluation } onClick={() => id ? triggerOnlineRecalculation() : triggerRecalculation()}/> */}
     </AppContainer>

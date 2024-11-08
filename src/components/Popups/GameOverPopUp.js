@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Confetti from "react-confetti";
+import {FaHome, FaPlay} from "react-icons/fa";
+import {Link} from 'react-router-dom';
+import {useWindowSize} from 'react-use';
 import styled from 'styled-components';
-import { FaHome } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa";
-import { Link } from 'react-router-dom';
 
-const GameOverPopUp = ({isSettingsOpen,setIsSettingsOpen,status,playAgain}) => {
+
+const GameOverPopUp = ({isSettingsOpen, setIsSettingsOpen, status, playAgain}) => {
+
+  const {width, height} = useWindowSize();
+
   const openSettings = () => {
     setIsSettingsOpen(true);
   };
@@ -17,11 +22,12 @@ const GameOverPopUp = ({isSettingsOpen,setIsSettingsOpen,status,playAgain}) => {
       {isSettingsOpen && (
         <ModalOverlay>
           <Container>
+            {status === "YouWon" && <Confetti width={width} height={height} />}
             <GameOver>Game Over</GameOver>
             <GameOverMessage>
               {status === "YouWon" && 'Congratulations! You\'ve Won!'}
               {status === "YouLost" && 'You selected the wrong option. Keep going, you can do it!'}
-              {status === "EvalLimit"  && 'Ouch, no more valid moves.'}
+              {status === "EvalLimit" && 'Ouch, no more valid moves.'}
               {status === "TimeUp" && 'You ran out of time'}
             </GameOverMessage>
             <Three>
@@ -34,9 +40,10 @@ const GameOverPopUp = ({isSettingsOpen,setIsSettingsOpen,status,playAgain}) => {
             </Three>
           </Container>
         </ModalOverlay>
-      )} 
+      )}
     </>
-)}
+  )
+}
 
 export default GameOverPopUp;
 
