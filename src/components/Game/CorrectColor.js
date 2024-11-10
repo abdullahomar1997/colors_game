@@ -54,6 +54,10 @@ const Circle = styled.div`
     /* margin: 5px; */
     cursor: pointer;
     list-style: none;   
+    border: 5px solid black;
+        border: 1px solid ${props => props.color3};
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
 `;
 
 const Container1 = styled.div`

@@ -170,6 +170,30 @@ const Button = styled(Link)`
   font-family: text9;
   position: relative;
   background-color: #FF6347;
+
+
+  // ackground-color: #FF0000; //red
+  // background-color: #D7415E; //red4
+  // background-color: #f54337; //RED
+  // background-color: #EF4B4C; //red3
+  // background-color: #EB1933; //red2-
+  // // background-color: #3f51b5; //BLUE
+  // background-color: #3f51b5; //BLUE
+  // background-color: #2151A1; //blue
+  // background-color: #2469D8; //blue
+  // background-color: #4cb050; //gREEN
+  // background-color: #246908; //green
+  // background-color: #00A82D; //green
+  // background-color: #FFDA5F; //YELLOW
+  // background-color: #fec107; //YELLOW
+  // background-color: #342a80; //PURPLE
+  // background-color: #e1017e; //pINK
+  // background-color: #636466; //GREY
+  // // background-color: #43282f; //bROWN
+  // // background-color: #5d4037; //bROWN
+  // background-color: #55342B; //bROWN
+  //   background-color: #e3660a; //ORANGE                 
+
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
 
 
