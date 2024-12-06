@@ -16,7 +16,7 @@ const generateLevel = (id, index, seconds, target, lives, options) => ({
 });
 
 const levels = [
-  // Levels with a time limit of 10 seconds
+  // Levels with a time limit of 10 secondss
   generateLevel(2030, 0, seconds10, 10, options2),
   generateLevel(2031, 1, seconds10, 20, options2),
   generateLevel(2032, 2, seconds10, 30, options2),
